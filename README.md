@@ -12,7 +12,7 @@ Responsive academic project prototype using separate HTML, CSS, and JavaScript f
 
 ## Run
 
-Open `index.html` in a modern browser. No install/build step is required.
+Open `index.html` in a modern browser. No install/build step is required
 
 ## Working navigation and controls
 
