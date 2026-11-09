@@ -1,0 +1,659 @@
+/* FacultyConnect - beginner CSS using class topics */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f3f5fa;
+    color: #243047;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+button, input, select, textarea {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+button {
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #eef1fb;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 390px;
+    background-color: white;
+    border: 1px solid #e1e5ef;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 8px 25px #dfe3ee;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    background-color: #526be4;
+    color: white;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-card h1 {
+    margin: 12px 0 0;
+    font-size: 25px;
+}
+
+.login-text {
+    color: #748097;
+    margin: 4px 0 25px;
+}
+
+.login-card label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.login-card input {
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+.small-note {
+    color: #758096;
+    font-size: 12px;
+    margin: 14px 0 0;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 225px;
+    height: 100vh;
+    background-color: #192640;
+    color: #e2e8f4;
+    padding: 22px 14px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    overflow-y: auto;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 5px 35px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+.small-logo {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+}
+
+.menu-title {
+    color: #91a0bd;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 12px 10px 8px;
+}
+
+.menu-button {
+    width: 100%;
+    border: 0;
+    border-radius: 7px;
+    background-color: transparent;
+    color: #d1d9e9;
+    text-align: left;
+    padding: 11px 12px;
+    margin: 3px 0;
+}
+
+.menu-button:hover, .menu-button.selected {
+    background-color: #30415f;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin: auto 10px 0;
+    color: #aebbd2;
+    font-size: 12px;
+}
+
+.sidebar-bottom p {
+    margin: 4px 0;
+}
+
+.creator {
+    border-top: 1px solid #34425e;
+    padding-top: 14px;
+    margin-top: 18px !important;
+}
+
+.main-area {
+    flex: 1;
+    min-width: 0;
+}
+
+.topbar {
+    min-height: 68px;
+    background-color: white;
+    border-bottom: 1px solid #e2e6ef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+}
+
+.topbar p {
+    color: #758096;
+    margin: 0;
+}
+
+#pageName {
+    color: #34415c;
+    font-weight: bold;
+}
+
+.faculty-name {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #e7ecff;
+    color: #4768e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 28px 32px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.page-heading h1 {
+    margin: 0 0 4px;
+    font-size: 25px;
+    color: #1e2b42;
+}
+
+.page-heading p {
+    margin: 0;
+    color: #758096;
+}
+
+.button {
+    border: 0;
+    border-radius: 7px;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+.main-button {
+    background-color: #4c68df;
+    color: white;
+}
+
+.main-button:hover {
+    background-color: #3854ca;
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+.light-button {
+    background-color: #edf0f7;
+    color: #35415a;
+}
+
+.light-button:hover {
+    background-color: #dfe4ef;
+}
+
+.danger-button {
+    background-color: #ffebed;
+    color: #b33c4b;
+}
+
+.danger-button:hover {
+    background-color: #ffdadd;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.summary-card {
+    background-color: white;
+    border: 1px solid #e1e6ef;
+    border-radius: 11px;
+    padding: 17px 19px;
+}
+
+.summary-card p {
+    color: #758096;
+    margin: 0;
+    font-size: 13px;
+}
+
+.summary-card h2 {
+    margin: 10px 0 0;
+    font-size: 27px;
+    color: #1d2b42;
+}
+
+.panel {
+    background-color: white;
+    border: 1px solid #e1e6ef;
+    border-radius: 11px;
+    margin-bottom: 20px;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 17px 20px;
+    border-bottom: 1px solid #e6eaf1;
+}
+
+.panel-heading h2, .form-panel h2, .settings-panel h2 {
+    margin: 0;
+    font-size: 17px;
+    color: #1e2b42;
+}
+
+.table-tools {
+    display: flex;
+    gap: 9px;
+}
+
+input, select, textarea {
+    border: 1px solid #d8deea;
+    border-radius: 7px;
+    padding: 10px 11px;
+    background-color: white;
+    color: #243047;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #7187e8;
+}
+
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+    background-color: #fbfcff;
+}
+
+input[type="text"] {
+    min-width: 0;
+}
+
+.table-tools input {
+    width: 225px;
+}
+
+.table-tools select {
+    width: 145px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #fafbfe;
+    color: #7c879b;
+    text-align: left;
+    font-size: 11px;
+    padding: 13px 16px;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 14px 16px;
+    border-top: 1px solid #edf0f5;
+}
+
+tbody tr:hover {
+    background-color: #fafbff;
+}
+
+tbody tr:first-child td {
+    border-top: 0;
+}
+
+.student-name {
+    font-weight: bold;
+    color: #202d43;
+}
+
+.sub-text {
+    display: block;
+    color: #7a859a;
+    font-size: 12px;
+}
+
+.category-label {
+    display: inline-block;
+    background-color: #edf1ff;
+    color: #4f65c5;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-size: 11px;
+}
+
+.status-label {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px 9px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status-open {
+    background-color: #fff3df;
+    color: #a66c12;
+}
+
+.status-progress {
+    background-color: #eaf0ff;
+    color: #4b68d5;
+}
+
+.status-completed {
+    background-color: #e4f6ed;
+    color: #16845b;
+}
+
+.status-overdue {
+    background-color: #ffeaec;
+    color: #bd4652;
+}
+
+.action-button {
+    border: 0;
+    border-radius: 5px;
+    background-color: #edf0f7;
+    color: #40506a;
+    padding: 6px 8px;
+    margin: 2px;
+    font-size: 11px;
+}
+
+.action-button:hover {
+    background-color: #dfe5f0;
+}
+
+.panel-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 20px;
+    border-top: 1px solid #e6eaf1;
+    color: #7a859a;
+    font-size: 12px;
+}
+
+.form-panel {
+    padding: 20px;
+}
+
+.form-panel h2 {
+    margin-bottom: 16px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #4d5a70;
+}
+
+.form-field input, .form-field select, .form-field textarea {
+    width: 100%;
+}
+
+.form-field textarea {
+}
+
+.full-field {
+    grid-column: 1 / 3;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.student-form-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.settings-panel {
+    padding: 23px;
+}
+
+.settings-panel h2 {
+    margin-bottom: 15px;
+}
+
+.settings-panel hr {
+    border: 0;
+    border-top: 1px solid #e4e8f0;
+    margin: 24px 0;
+}
+
+.setting-text {
+    color: #758096;
+}
+
+.notice {
+    background-color: #f4f6fb;
+    border-radius: 7px;
+    padding: 13px;
+    margin-top: 22px;
+    color: #59667e;
+    font-size: 12px;
+}
+
+.category-summary {
+    padding: 18px 20px;
+}
+
+.category-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #edf0f5;
+    padding: 11px 0;
+}
+
+.category-row:first-child {
+    border-top: 0;
+}
+
+.category-row strong {
+    color: #445bd0;
+}
+
+.page-footer {
+    text-align: center;
+    color: #8993a6;
+    font-size: 12px;
+    padding: 0 15px 20px;
+}
+
+.mobile-footer {
+    display: none;
+}
+
+/* Keep the menu and cards usable on smaller screens */
+@media (max-width: 950px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .content {
+        padding: 22px 18px;
+    }
+
+    .summary-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 14px;
+        position: static;
+        align-self: auto;
+        overflow: visible;
+    }
+
+    .brand {
+        margin-bottom: 12px;
+    }
+
+    .menu-title {
+        display: none;
+    }
+
+    /* On mobile, show the creator credit at the bottom of the page. */
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .desktop-footer {
+        display: none;
+    }
+
+    .mobile-footer {
+        display: inline;
+        font-weight: bold;
+        color: #8993a6;
+    }
+
+    .menu-button {
+        width: auto;
+        display: inline-block;
+        margin: 2px;
+        padding: 9px;
+    }
+
+    .topbar {
+        padding: 12px 15px;
+    }
+
+    .content {
+        padding: 18px 12px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .summary-cards {
+        gap: 8px;
+    }
+
+    .summary-card {
+        padding: 12px;
+    }
+
+    .panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .table-tools {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .table-tools input, .table-tools select {
+        width: 100%;
+    }
+
+    .form-grid, .student-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-field {
+        grid-column: 1 / 2;
+    }
+
+    .panel-footer {
+        flex-direction: column;
+    }
+}

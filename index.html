@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FacultyConnect - Consultation Log</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Demo faculty access screen -->
+    <section id="loginPage" class="login-page">
+        <div class="login-card">
+            <div class="logo">FC</div>
+            <h1>FacultyConnect</h1>
+            <p class="login-text">Faculty Consultation Log</p>
+            <label for="accessCode">Faculty access code</label>
+            <input type="password" id="accessCode" placeholder="Enter access code">
+            <button class="button main-button" onclick="checkAccess()">Enter workspace</button>
+            <p class="small-note">Demo access only. Ask the project team for the demo code.</p>
+        </div>
+    </section>
+
+    <!-- Main application -->
+    <div id="appPage" class="app" style="display: none;">
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo small-logo">FC</span>
+                <span>FacultyConnect</span>
+            </div>
+
+            <p class="menu-title">WORKSPACE</p>
+            <nav aria-label="Workspace navigation">
+                <button id="navConsultations" class="menu-button selected" onclick="showPage('consultations')">Consultations</button>
+                <button id="navStudents" class="menu-button" onclick="showPage('students')">Students &amp; Courses</button>
+                <button id="navFollowups" class="menu-button" onclick="showPage('followups')">Follow-ups</button>
+                <button id="navReports" class="menu-button" onclick="showPage('reports')">Reports</button>
+
+                <p class="menu-title">PREFERENCES</p>
+                <button id="navSettings" class="menu-button" onclick="showPage('settings')">Settings</button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p class="creator">Created by Yuvan</p>
+            </div>
+        </aside>
+
+        <main class="main-area">
+            <header class="topbar">
+                <p>Workspace / <span id="pageName">Consultation log</span></p>
+                <div class="faculty-name"><span class="avatar">DS</span><span id="topFaculty">Dr. Sharma</span></div>
+            </header>
+
+            <div class="content">
+
+                <!-- CONSULTATIONS PAGE -->
+                <section id="consultationsPage" class="page">
+                    <div class="page-heading">
+                        <div>
+                            <h1>Consultation log</h1>
+                            <p>Record student conversations and keep follow-ups on track.</p>
+                        </div>
+                        <button class="button main-button" onclick="openConsultationForm()">+ New consultation</button>
+                    </div>
+
+                    <div class="summary-cards">
+                        <div class="summary-card"><p>Total consultations</p><h2 id="totalCount">0</h2></div>
+                        <div class="summary-card"><p>Needs follow-up</p><h2 id="followCount">0</h2></div>
+                        <div class="summary-card"><p>Completed</p><h2 id="completedCount">0</h2></div>
+                        <div class="summary-card"><p>Overdue</p><h2 id="overdueCount">0</h2></div>
+                    </div>
+
+                    <section id="consultationFormBox" class="panel form-panel" style="display: none;">
+                        <h2 id="formHeading">New consultation</h2>
+                        <form onsubmit="saveConsultation(); return false;">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="studentName">Student name *</label>
+                                <input type="text" id="studentName" required placeholder="Enter student name">
+                            </div>
+                            <div class="form-field">
+                                <label for="studentId">Registration ID</label>
+                                <input type="text" id="studentId" placeholder="Enter registration ID">
+                            </div>
+                            <div class="form-field">
+                                <label for="courseName">Course / subject *</label>
+                                <input type="text" id="courseName" required placeholder="Enter course name">
+                            </div>
+                            <div class="form-field">
+                                <label for="consultDate">Consultation date *</label>
+                                <input type="date" id="consultDate" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="category">Category</label>
+                                <select id="category">
+                                    <option>Academic performance</option>
+                                    <option>Attendance</option>
+                                    <option>Course clarification</option>
+                                    <option>Project support</option>
+                                    <option>Career guidance</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="status">Status</label>
+                                <select id="status">
+                                    <option>Open</option>
+                                    <option>In Progress</option>
+                                    <option>Completed</option>
+                                </select>
+                            </div>
+                            <div class="form-field full-field">
+                                <label for="notes">Consultation notes *</label>
+                                <textarea id="notes" rows="3" required placeholder="Write the student's concern and discussion"></textarea>
+                            </div>
+                            <div class="form-field full-field">
+                                <label for="actionItems">Action items</label>
+                                <textarea id="actionItems" rows="2" placeholder="Write the next steps agreed with the student"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label for="followDate">Follow-up date</label>
+                                <input type="date" id="followDate">
+                            </div>
+                            <div class="form-field">
+                                <label for="assignedTo">Assigned to</label>
+                                <input type="text" id="assignedTo" value="Dr. Sharma">
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button class="button light-button" type="button" onclick="closeConsultationForm()">Cancel</button>
+                            <button class="button main-button" type="submit">Save consultation</button>
+                        </div>
+                        <p class="small-note">Fields marked with * are required.</p>
+                        </form>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-heading">
+                            <h2>Recent consultations</h2>
+                            <div class="table-tools">
+                                <select id="statusFilter">
+                                    <option>All statuses</option>
+                                    <option>Open</option>
+                                    <option>In Progress</option>
+                                    <option>Completed</option>
+                                </select>
+                                <button class="button light-button" onclick="showConsultations()">Apply filter</button>
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Student / course</th>
+                                        <th>Date</th>
+                                        <th>Category</th>
+                                        <th>Follow-up</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="consultationRows"></tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer"><span id="recordCount">0 records</span><span>Demo records are kept while this page is open.</span></div>
+                    </section>
+                </section>
+
+                <!-- STUDENTS PAGE -->
+                <section id="studentsPage" class="page" style="display: none;">
+                    <div class="page-heading">
+                        <div>
+                            <h1>Students &amp; Courses</h1>
+                            <p>Keep student and course references in one place.</p>
+                        </div>
+                    </div>
+
+                    <section class="panel form-panel">
+                        <h2>Add student reference</h2>
+                        <form onsubmit="addStudent(); return false;">
+                        <div class="form-grid student-form-grid">
+                            <div class="form-field">
+                                <label for="newStudentName">Student name *</label>
+                                <input type="text" id="newStudentName" required placeholder="Enter student name">
+                            </div>
+                            <div class="form-field">
+                                <label for="newStudentId">Registration ID *</label>
+                                <input type="text" id="newStudentId" required placeholder="Enter registration ID">
+                            </div>
+                            <div class="form-field">
+                                <label for="newStudentCourse">Course *</label>
+                                <input type="text" id="newStudentCourse" required placeholder="Enter course name">
+                            </div>
+                        </div>
+                        <button class="button main-button" type="submit">Add student</button>
+                        </form>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-heading"><h2>Student directory</h2><span class="small-note">Student and course reference list</span></div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead><tr><th>Student</th><th>Registration ID</th><th>Course</th><th>Consultations</th></tr></thead>
+                                <tbody id="studentRows"></tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer"><span id="studentTotal">0 students</span><span>Student references for this demo</span></div>
+                    </section>
+                </section>
+
+                <!-- FOLLOW-UPS PAGE -->
+                <section id="followupsPage" class="page" style="display: none;">
+                    <div class="page-heading">
+                        <div>
+                            <h1>Follow-ups</h1>
+                            <p>Check pending actions and follow-up dates.</p>
+                        </div>
+                    </div>
+                    <section class="panel">
+                        <div class="panel-heading">
+                            <h2>Follow-up list</h2>
+                            <select id="followFilter">
+                                <option>All follow-ups</option>
+                                <option>Overdue</option>
+                                <option>Upcoming</option>
+                                <option>No date</option>
+                            </select>
+                            <button class="button light-button" onclick="showFollowups()">Apply filter</button>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead><tr><th>Student / course</th><th>Action items</th><th>Due date</th><th>Status</th><th>Action</th></tr></thead>
+                                <tbody id="followRows"></tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer"><span id="followTotal">0 follow-ups</span><span>Completed consultations are not shown here.</span></div>
+                    </section>
+                </section>
+
+                <!-- REPORTS PAGE -->
+                <section id="reportsPage" class="page" style="display: none;">
+                    <div class="page-heading">
+                        <div>
+                            <h1>Reports</h1>
+                            <p>A simple summary of the consultation records.</p>
+                        </div>
+                    </div>
+                    <div class="summary-cards">
+                        <div class="summary-card"><p>Total records</p><h2 id="reportTotal">0</h2></div>
+                        <div class="summary-card"><p>Open cases</p><h2 id="reportOpen">0</h2></div>
+                        <div class="summary-card"><p>Completed cases</p><h2 id="reportCompleted">0</h2></div>
+                        <div class="summary-card"><p>Students</p><h2 id="reportStudents">0</h2></div>
+                    </div>
+                    <section class="panel">
+                        <div class="panel-heading"><h2>Consultations by category</h2></div>
+                        <div id="categorySummary" class="category-summary"></div>
+                    </section>
+                </section>
+
+                <!-- SETTINGS PAGE -->
+                <section id="settingsPage" class="page" style="display: none;">
+                    <div class="page-heading"><div><h1>Settings</h1><p>Faculty workspace details and demo information.</p></div></div>
+                    <section class="panel settings-panel">
+                        <h2>Workspace details</h2>
+                        <div class="form-grid">
+                            <div class="form-field"><label for="facultyInput">Faculty display name</label><input type="text" id="facultyInput" value="Dr. Sharma"></div>
+                            <div class="form-field"><label for="yearInput">Academic year</label><input type="text" id="yearInput" value="2026-27"></div>
+                        </div>
+                        <button class="button main-button" onclick="saveSettings()">Save details</button>
+                        <hr>
+                        <h2>Demo data</h2>
+                        <p class="setting-text">The sample consultations are fictional. Clear the records to test an empty workspace.</p>
+                        <button class="button danger-button" onclick="clearRecords()">Clear all records</button>
+                        <div class="notice">
+                            <strong>Project limitation:</strong> This is a front-end class prototype. The access code is checked in JavaScript and is not secure login. Records are kept only while this page is open; refreshing the page restores the sample data. Real private faculty records need secure login and server-side storage.
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+            <footer class="page-footer">
+                <span class="desktop-footer">FacultyConnect · CSE326 Internet Programming · Demo project</span>
+                <span class="mobile-footer">Created by Yuvan</span>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
