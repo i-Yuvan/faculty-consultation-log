@@ -2,67 +2,72 @@
 
 **CSE326 Internet Programming | CA1 Project | Group 7**
 
-FacultyConnect is a beginner-level front-end project prototype for recording student consultations and keeping track of academic concerns and follow-up actions.
+FacultyConnect is a simple web project that helps faculty members record student consultations and keep track of follow-up work.
 
-**Live demo:** [https://i-yuvan.github.io/faculty-consultation-log/](https://i-yuvan.github.io/faculty-consultation-log/)
+**Live Demo:** https://i-yuvan.github.io/faculty-consultation-log/
 
-## Project purpose
+## About the Project
 
-FacultyConnect provides a simple place for a faculty member to record a student consultation, note the discussion and agreed action items, set a follow-up date, and check the consultation status.
+The project provides a simple way to add student consultation details, write notes, set follow-up dates and check the status of each consultation.
 
-## Main features
+## Main Features
 
-- **Faculty access screen:** Opens the demo workspace using the demo access code **`326`**.
-- **Consultations:** Add, view, edit and delete consultation records. Each record includes student and course details, consultation date, category, notes, action items, assigned faculty member, follow-up date and status.
-- **Consultation history:** Shows the previous consultation details after a record has been edited during the current session.
-- **Students & Courses:** Add student and course references and view them in a directory, including the number of consultations for each student.
-- **Follow-ups:** View pending consultations and filter them by all follow-ups, overdue, upcoming or no date. Open a related consultation for editing.
-- **Reports:** View simple totals for consultations, open cases, completed cases and students, along with consultation counts by category.
-- **Settings:** Change the faculty display name and academic year shown in the workspace, or clear the current demo records.
-- **Responsive layout:** The interface adjusts for laptop and mobile screen sizes.
+- **Faculty Access:** Open the workspace using the demo access code **`326`**.
+- **Consultations:** Add, view, edit and delete consultation records.
+- **Consultation History:** View previous details after editing a consultation.
+- **Students & Courses:** Add student and course details and view them in a directory.
+- **Follow-ups:** View pending follow-ups and filter them by date.
+- **Reports:** View consultation totals, open cases, completed cases and category counts.
+- **Settings:** Change the faculty name and academic year, or clear demo records.
+- **Responsive Design:** The website adjusts to laptop and mobile screens.
 
-## Project files
-```
+## Project Files
+
+```text
 faculty-consultation-log/
 │
 ├── index.html
 ├── README.md
+│
 ├── css/
 │   └── styles.css
+│
 └── js/
     └── app.js
 ```
 
-- `index.html` — page structure, navigation, forms, tables and content.
-- `css/styles.css` — page layout, colours, typography, buttons, tables and responsive design.
-- `js/app.js` — demo records and the functions for navigation, consultation forms, student references, follow-ups, reports and settings.
+- `index.html` — Contains the structure and content of the website.
+- `css/styles.css` — Controls the design, colours and layout.
+- `js/app.js` — Handles the website features and functions.
 
-## How to run
+## How to Run
 
 1. Open `index.html` in a modern web browser.
 2. Enter the demo faculty access code: **`326`**.
 
-The project does not require an installation or build step.
+No installation or build step is required.
 
-## Class topics used
+## Class Topics Used
 
-The project applies the basic HTML, CSS and JavaScript concepts covered in the CSE326 Unit 1–4 class material.
+This project uses basic concepts taught in CSE326:
 
-- **HTML:** HTML document structure, metadata, semantic elements, headings, paragraphs, forms, labels, input fields, select menus, textareas and tables.
-- **CSS:** Universal, element and class selectors, pseudo-classes, box model, colours, backgrounds, typography, Flexbox, Grid, transitions and media queries.
-- **JavaScript:** `let` and `const`, strings, arrays, objects, functions, `for` loops, `if...else`, comparisons, `document.getElementById()`, `innerHTML`, form input values, `onclick`, `alert()` and `confirm()`.
+- **HTML:** Page structure, headings, paragraphs, links, buttons, forms, labels, input fields and tables.
+- **CSS:** Selectors, colours, backgrounds, box model, Flexbox, Grid, positioning, transitions and media queries.
+- **JavaScript:** Variables, strings, arrays, objects, functions, loops, conditions, comparisons, DOM methods, button clicks, alerts and confirmation boxes.
 
-## Demo limitations
+## Limitations
 
-- This is a front-end classroom prototype. The access code is checked in JavaScript and is **not secure authentication or real access control**.
-- Consultation and student data are held in JavaScript arrays while the page is open. Refreshing the page reloads the sample records, so changes made during a session are not permanently saved.
-- Consultation history is kept during the current session and is shown after a consultation is edited.
-- The project does not use a server database, secure institutional storage or multi-user synchronisation.
+- This is a front-end classroom project, not a complete college management system.
+- The demo access code is checked using JavaScript. It is not secure authentication.
+- Consultation and student data are stored in JavaScript arrays while the page is open.
+- Refreshing the page reloads the sample records. Changes made during a session are not permanently saved.
+- Consultation history is available only during the current session.
+- The project does not use a server database or support multiple users at the same time.
 - Use fictional or test information only. Do not enter private student information.
 
-The sample student names and IDs are fictional. The registration IDs in the assigned problem statement identify the project team, not the sample students shown in the application.
+The sample student names and IDs are fictional. The registration IDs in the assigned problem statement identify the project team, not the sample students.
 
-For GitHub Pages, upload the complete folder structure. Keep `styles.css` inside `css/` and `app.js` inside `js/`, as referenced by `index.html`.
+For GitHub Pages, keep the same folder structure shown above. The CSS and JavaScript files must remain in their respective folders.
 
 ---
 
