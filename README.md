@@ -6,79 +6,64 @@ Responsive academic project prototype using separate HTML, CSS, and JavaScript f
 
 ## Files
 
-* `index.html` — page markup and external asset references
-* `css/styles.css` — layout, styling, responsive behavior
-* `js/app.js` — navigation, forms, data persistence, filters, reports, CSV export
+- `index.html` — page structure, forms, navigation and content
+- `css/styles.css` — layout, styling and responsive behavior
+- `js/app.js` — navigation, consultation forms, student references, follow-ups, reports and settings
 
 ## Run
 
-Open `index.html` in a modern browser. No install/build step is required
+Open `index.html` in a modern browser. No installation or build step is required.
+
+Enter the demo faculty access code: **`326`**
 
 ## Working navigation and controls
 
-* Consultations: add/edit/delete, search, status filter, export CSV
-* Students \& Courses: add student, search directory, remove directory entry
-* Follow-ups: filter overdue/upcoming/no-date, edit related consultation
-* Reports: current-month count, open cases, completion rate, unique students, category chart
-* Settings: save faculty/year preference, restore fictional sample data, clear records
+- **Consultations:** Add, view, edit and delete consultation records; filter records by status.
+- **Students & Courses:** Add student references and view the student directory with consultation counts.
+- **Follow-ups:** View pending consultations and filter by overdue, upcoming or no follow-up date; edit related consultations.
+- **Reports:** View total consultations, open cases, completed cases, student count and consultation counts by category.
+- **Settings:** Change the faculty display name and academic year, and clear demo records.
+- **Consultation History:** View previous consultation details after editing a record during the current session.
 
-## Data/security note
+## Folder Structure
 
-Records are saved to browser localStorage. This is a classroom prototype, not secure private storage. It has no authentication, server-side authorization, encryption, or multi-user sync. Use fictional student data only.
+```text
+faculty-consultation-log/
+│
+├── index.html
+├── README.md
+│
+├── css/
+│   └── styles.css
+│
+└── js/
+    └── app.js
+```
 
-\##FacultyConnect - CSE326 Beginner Version (Group 7)
+## Class Topics Used
 
+**HTML:** HTML document structure, metadata, semantic elements, headings, paragraphs, links, buttons, forms, labels, input fields, select menus, textareas and tables.
 
+**CSS:** Element, class and universal selectors, pseudo-classes, box model, colours, backgrounds, typography, Flexbox, Grid, positioning, transitions and media queries.
 
-FOLDER STRUCTURE
+**JavaScript:** `let`, `const`, strings, arrays, objects, functions, `for` loops, `if...else`, comparison operators, `document.getElementById()`, `innerHTML`, input values, `onclick`, `alert()` and `confirm()`.
 
-index.html
+## Important Limitations
 
-css/styles.css
+- This is a front-end classroom prototype. The access code is checked in JavaScript and is not secure authentication or real access control.
 
-js/app.js
+- Consultation and student data are kept in JavaScript arrays while the page is open. Refreshing the page reloads the sample records. This version does not use browser storage or a server database.
 
+- The history feature shows previous consultation details after a record is edited during the current session.
 
+- The project does not provide secure institutional storage or multi-user synchronisation.
 
-HOW TO RUN
-
-1\. Keep the css and js folders beside index.html.
-
-2\. Open index.html in a web browser.
-
-3\. Enter the demo faculty access code: 326
-
-
-
-CLASS TOPICS USED
-
-HTML: HTML document structure, metadata, semantic elements, headings, paragraphs, links/buttons, forms, labels, inputs, select, textarea and tables.
-
-CSS: element/class/id selectors, universal selector, pseudo-classes, box model, colors, backgrounds, typography, Flexbox, Grid, positioning/layout, transitions and media queries.
-
-JavaScript: let/const, strings, arrays, objects, functions, for loops, if/else, comparisons, document.getElementById(), innerHTML, input values, onclick, alert() and confirm().
-
-
-
-IMPORTANT LIMITATIONS
-
-\- This is a front-end class prototype. The access code check is written in JavaScript and is not secure authentication or real access control.
-
-\- Consultation and student data are kept in JavaScript arrays while the page is open. Refreshing the page reloads the sample records. This version does not use browser storage or a server database.
-
-\- The history button shows earlier details after a consultation is edited during the current session.
-
-\- Use fictional or test information only. Do not enter private student information.
-
-
+- Use fictional or test information only. Do not enter private student information.
 
 The sample student names and IDs are fictional test data. The registration IDs shown in the assigned problem statement identify the project team, not the sample students.
 
+For GitHub Pages, upload the complete folder structure. Keep `styles.css` inside the `css` folder and `app.js` inside the `js` folder, as referenced in `index.html`.
 
+---
 
-For GitHub Pages, upload the full folder structure. Do not put styles.css and app.js in the same folder as index.html unless you also change the file paths in index.html.
-
-\---
-
-Created by Yuvan
-
+**Created by Yuvan**
